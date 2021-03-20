@@ -33,14 +33,14 @@ public class HomeController {
     public String viewHomePage(Model model){
         List<Child> listChildren = CHservice.listAll();
         model.addAttribute("listChildren", listChildren); // model attribute string needs to go into thymeleaf
-        return "child";
+        return "child/child";
     }
 
-    @RequestMapping("/new_child")
+    @RequestMapping("/child/new_child")
     public String showNewChildForm(Model model){
         Child child = new Child();
         model.addAttribute("child", child);
-        return "new_child";
+        return "child/new_child";
     }
 
     @RequestMapping(value = "/save_child", method = RequestMethod.POST)
@@ -51,7 +51,7 @@ public class HomeController {
 
     @RequestMapping("/edit_child_info{id}")
     public ModelAndView showEditChildForm(@PathVariable(name = "id") Long id){
-        ModelAndView modelAndView = new ModelAndView("edit_child_info");
+        ModelAndView modelAndView = new ModelAndView("child/edit_child_info");
         Child child = CHservice.get(id);
         modelAndView.addObject("child", child);
         return modelAndView;

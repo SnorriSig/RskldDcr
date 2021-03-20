@@ -8,7 +8,7 @@
 <body>
 <div class="content-div">
     <h1>Add new child</h1>
-    <form name="new-child" action="#" th:action="@{/save}" th:object="${child}" method="post">
+    <form name="new-child" action="#" th:action="@{/save_child}" th:object="${child}" method="post">
         <table>
 
             <tr>
@@ -24,8 +24,8 @@
                 <td><input name="regdate" type="text" th:field="*{childDoB}" placeholder="yyyy-mm-dd"></td>
             </tr>
             <tr>
-                <td>Enrollment date:</td>
-                <td><input name="enrldate" type="text" th:field="*{teamId}" placeholder="yyyy-mm-dd"></td>
+                <td>Team ID:</td>
+                <td><input name="enrldate" type="text" th:field="*{teamId}" ></td>
             </tr>
             <tr>
                 <td>Contact ID:</td>
