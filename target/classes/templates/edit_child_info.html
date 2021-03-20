@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-dk" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/globalstyles.css}"/>
+    <title>Edit child info</title>
+</head>
+<body>
+<div class="content-div">
+    <h1>Edit child's information</h1>
+    <form action="#" th:action="@{/save_child}" th:object="${child}" method="post">
+        <table>
+            <tr>
+                <td>Child id:</td>
+                <td><input class="id-input" type="text" th:field="*{childId}" readonly="readonly"></td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" th:field="*{childFirstName}"></td>
+            </tr>
+            <tr>
+                <td>Last name:</td>
+                <td><input type="text" th:field="*{childLastName}"></td>
+            </tr>
+            <tr>
+                <td>Date of birth:</td>
+                <td><input type="text" th:field="*{childDoB}" placeholder="yyyy-mm-dd"></td>
+            </tr>
+            <tr>
+                <td>Team ID:</td>
+                <td><input type="text" th:field="*{teamId}" placeholder="yyyy-mm-dd"></td>
+            </tr>
+            <tr>
+                <td>Contact ID:</td>
+                <td><input type="text" th:field="*{contactId}"></td>
+            </tr>
+            <tr>
+                <td>Status:</td>
+                <td><input type="text" th:field="*{childStatus}"></td>
+            </tr>
+            <tr>
+                <td><button type="submit">Submit</button></td>
+                <td><button href="/children">Cancel</button></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/globalstyles.css}"/>
+    <title>Edit activity info</title>
+</head>
+<body>
+<div class="content-div">
+    <h1>Edit activity information</h1>
+    <form action="#" th:action="@{/save_activity}" th:object="${activity}" method="post" >
+        <table>
+            <tr style="display:none;">
+                <td><input class="id-input" type="text" th:field="*{activityId}" readonly="readonly"></td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" th:field="*{activityName}"></td>
+            </tr>
+            <tr>
+                <td>Date:</td>
+                <td><input type="text" th:field="*{activityDate}" placeholder="yyyy-mm-dd"></td>
+            </tr>
+            <tr>
+                <td>Status:</td>
+                <td><input type="text" th:field="*{activityStatus}"></td>
+            </tr>
+            <tr>
+                <td>TeamID:</td>
+                <td><input type="text" th:field="*{teamId}"></td>
+            </tr>
+            <tr>
+                <td><button type="submit">Submit</button></td>
+                <td><button href="/activity">Cancel</button></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
