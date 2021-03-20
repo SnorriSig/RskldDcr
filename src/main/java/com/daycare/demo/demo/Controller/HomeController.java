@@ -49,7 +49,7 @@ public class HomeController {
         return "redirect:/children";
     }
 
-    @RequestMapping("/edit_child_info{id}")
+    @RequestMapping("/edit_child_info_{id}")
     public ModelAndView showEditChildForm(@PathVariable(name = "id") Long id){
         ModelAndView modelAndView = new ModelAndView("child/edit_child_info");
         Child child = CHservice.get(id);
@@ -68,14 +68,14 @@ public class HomeController {
     public String viewActivityPage(Model model){
         List<Activity> listActivities = ACservice.listAll();
         model.addAttribute("listActivities", listActivities); // model attribute string needs to go into thymeleaf
-        return "activity"; // CHANGE
+        return "activity/activity"; // CHANGE
     }
 
-    @RequestMapping("/new_activity")
+    @RequestMapping("/activity/new_activity")
     public String showNewActivityForm(Model model){
         Activity activity = new Activity();
         model.addAttribute("activity", activity);
-        return "new_activity";
+        return "activity/new_activity";
     }
 
     @RequestMapping(value = "/save_activity", method = RequestMethod.POST)
@@ -86,7 +86,7 @@ public class HomeController {
 
     @RequestMapping("/edit_activity/{id}")
     public ModelAndView showNewAcivityForm(@PathVariable(name = "id") Long id){
-        ModelAndView modelAndView = new ModelAndView("edit_activity_info");
+        ModelAndView modelAndView = new ModelAndView("activity/edit_activity_info");
         Activity activity = ACservice.get(id);
         modelAndView.addObject("activity", activity);
         return modelAndView;
@@ -102,14 +102,14 @@ public class HomeController {
     public String viewContactsPage(Model model){
         List<Contact> listContacts = COservice.listAll();
         model.addAttribute("listContact", listContacts); // model attribute string needs to go into thymeleafcontact_Phone_Number
-        return "contact"; // CHANGE
+        return "/contact/contact"; // CHANGE
     }
 
-    @RequestMapping("/new_contact")
+    @RequestMapping("/contact/new_contact")
     public String showNewContactForm(Model model){
         Contact contact = new Contact();
         model.addAttribute("contact", contact);
-        return "new_contact";
+        return "/contact/new_contact";
     }
 
     @RequestMapping(value = "/save_contact", method = RequestMethod.POST)
@@ -120,7 +120,7 @@ public class HomeController {
 
     @RequestMapping("/edit_contact/{id}")
     public ModelAndView showNewContactForm(@PathVariable(name = "id") Long id){
-        ModelAndView modelAndView = new ModelAndView("edit_contact_info");
+        ModelAndView modelAndView = new ModelAndView("/contact/edit_contact_info");
         Contact contact = COservice.get(id);
         modelAndView.addObject("contact", contact);
         return modelAndView;
