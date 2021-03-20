@@ -8,7 +8,7 @@
 <body>
 <div class="content-div">
     <h1>Edit child's information</h1>
-    <form action="#" th:action="@{/save_child}" th:object="${child}" method="post">
+    <form name="child-form" action="#" th:action="@{/save_child}" th:object="${child}" method="post">
         <table>
             <tr>
                 <td>Child id:</td>
@@ -24,11 +24,11 @@
             </tr>
             <tr>
                 <td>Date of birth:</td>
-                <td><input type="text" th:field="*{childDoB}" placeholder="yyyy-mm-dd"></td>
+                <td><input type="text" th:field="*{childDoB}" placeholder="dd-mm-yyyy"></td>
             </tr>
             <tr>
                 <td>Team ID:</td>
-                <td><input type="text" th:field="*{teamId}" placeholder="yyyy-mm-dd"></td>
+                <td><input type="text" th:field="*{teamId}" ></td>
             </tr>
             <tr>
                 <td>Contact ID:</td>
@@ -45,5 +45,10 @@
         </table>
     </form>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+<script src="/js/form-validation.js"></script>
+
 </body>
 </html>

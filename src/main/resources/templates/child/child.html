@@ -30,10 +30,10 @@
             <td th:text="${child.childStatus}"></td>
             <td>
                 <button>
-                    <a th:href="@{'/edit_child_info' + ${child.childId}}">Edit</a>
+                    <a th:href="@{'/edit_child_info/' + ${child.childId}}">Edit</a>
                 </button>
                 <button>
-                    <a th:href="@{'/remove/child_' + ${child.childId}}">Remove</a>
+                    <a th:href="@{'/remove/child/' + ${child.childId}}">Remove</a>
                 </button>
             </td>
         </tr>

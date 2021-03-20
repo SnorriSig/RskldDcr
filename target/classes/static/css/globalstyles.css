@@ -22,7 +22,7 @@ form{
     border: none;
 }
 form .error {
-    color: #ff0000;
+    color: #b51284;
 }
 
 h1 {
@@ -89,3 +89,15 @@ a {
 a:hover{
     color: white;
 }
+
+
+/*
+.navigation-banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    flex-flow: nowrap row;
+    align-items: center;
+}
+*/
