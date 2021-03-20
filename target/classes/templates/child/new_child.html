@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-dk" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/globalstyles.css}"/>
+    <title>Add new child</title>
+</head>
+<body>
+<div class="content-div">
+    <h1>Add new child</h1>
+    <form name="child-form" action="#" th:action="@{/save_child}" th:object="${child}" method="post">
+        <table>
+
+            <tr>
+                <td>Name:</td>
+                <td><input  type="text" th:field="*{childFirstName}"></td>
+            </tr>
+            <tr>
+                <td>Last name:</td>
+                <td><input  type="text" th:field="*{childLastName}"></td>
+            </tr>
+            <tr>
+                <td>Date of birth:</td>
+                <td><input type="text" th:field="*{childDoB}" placeholder="dd-mm-yyyy"></td>
+            </tr>
+            <tr>
+                <td>Team ID:</td>
+                <td><input type="number" th:field="*{teamId}" ></td>
+            </tr>
+            <tr>
+                <td>Contact ID:</td>
+                <td><input type="number" th:field="*{contactId}"></td>
+            </tr>
+            <tr>
+                <td>Child status:</td>
+                <td><input type="number" th:field="*{childStatus}"></td>
+            </tr>
+
+            <tr>
+                <td><button type="submit">Submit</button></td>
+                <td><button><a href="/children">Cancel</a></button></td>
+
+            </tr>
+        </table>
+    </form>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+<script src="/js/form-validation.js"></script>
+
+</body>
+</html>

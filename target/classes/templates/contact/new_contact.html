@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-dk" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/globalstyles.css}"/>
+    <title>Add new contact</title>
+</head>
+<body>
+<div class="content-div">
+    <h1>Add new contact</h1>
+    <form action="#" th:action="@{/save_contact}" th:object="${contact}" method="post">
+        <table>
+
+            <tr>
+                <td>Contact name:</td>
+                <td><input type="text" th:field="*{contactFirstName}"></td>
+            </tr>
+            <tr>
+                <td>Contact last name:</td>
+                <td><input type="text" th:field="*{contactLastName}"></td>
+            </tr>
+            <tr>
+                <td>Contact phone number:</td>
+                <td><input type="text" th:field="*{contactPhoneNumber}"></td>
+            </tr>
+            <tr>
+                <td>Child ID:</td>
+                <td><input type="text" th:field="*{childId}"></td>
+            </tr>
+            <tr>
+                <td><button type="submit">Submit</button></td>
+                <td><a href="/contacts"><button>Cancel</button></a></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>
