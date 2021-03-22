@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Roskilde Daycare</title>
-    <link rel="stylesheet" th:href="@{/css/globalstyles.css}">
-</head>
-<body>
-
-<div class="content-div">
-<h1>Welcome to Roskilde Daycare</h1>
-    <div id="home-buttons">
-        <button><a href="/children">See enrolled children</a></button>
-        <button><a href="/activities">See activity list</a></button>
-        <button><a href="/contacts">See contacts list</a></button>
+    <link rel="stylesheet" th:href="@{/css/globalstyles.css}" />
+  </head>
+  <body>
+    <div class="content-div">
+      <h1>Welcome to Roskilde Daycare</h1>
+      <div id="home-buttons">
+        <button type="button">
+          <a href="/children">See enrolled children</a>
+        </button>
+        <button type="button">
+          <a href="/activities">See activity list</a>
+        </button>
+        <button type="button"><a href="/contacts">See contacts list</a></button>
+      </div>
     </div>
-</div>
-
-</body>
+  </body>
 </html>
