@@ -1,40 +1,65 @@
 <!DOCTYPE html>
-<html lang="en-dk" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" th:href="@{/css/globalstyles.css}"/>
+<html
+  lang="en-dk"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/globalstyles.css}" />
     <title>Edit contact info</title>
-</head>
-<body>
-<div class="content-div">
-    <h1>Edit contact information</h1>
-    <form action="#" th:action="@{/save_contact}" th:object="${contact}" method="post">
+  </head>
+  <body>
+    <div class="content-div">
+      <h1>Edit contact information</h1>
+      <form
+        action="#"
+        th:action="@{/save_contact}"
+        th:object="${contact}"
+        method="post"
+      >
         <table>
-            <tr style="display:none;">
-                <td><input class="id-input" type="text" th:field="*{contactId}" readonly="readonly"></td>
-            </tr>
-            <tr>
-                <td>Contact first name:</td>
-                <td><input type="text" th:field="*{contactFirstName}"></td>
-            </tr>
-            <tr>
-                <td>Contact last name:</td>
-                <td><input type="text" th:field="*{contactLastName}"></td>
-            </tr>
-            <tr>
-                <td>Contact phone number:</td>
-                <td><input type="text" th:field="*{contactPhoneNumber}"></td>
-            </tr>
-            <tr>
-                <td>Child ID:</td>
-                <td><input class="id-input" type="text" th:field="*{childId}" readonly="readonly"></td>
-            </tr>
-            <tr>
-                <td><button type="submit">Submit</button></td>
-                <atd><a href="/contacts"><button>Cancel</button></a><td>
-            </tr>
+          <tr style="display: none">
+            <td>
+              <input
+                class="id-input"
+                type="text"
+                th:field="*{contactId}"
+                readonly="readonly"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Contact first name:</td>
+            <td><input type="text" th:field="*{contactFirstName}" /></td>
+          </tr>
+          <tr>
+            <td>Contact last name:</td>
+            <td><input type="text" th:field="*{contactLastName}" /></td>
+          </tr>
+          <tr>
+            <td>Contact phone number:</td>
+            <td><input type="text" th:field="*{contactPhoneNumber}" /></td>
+          </tr>
+          <tr>
+            <td>Child ID:</td>
+            <td>
+              <input
+                class="id-input"
+                type="text"
+                th:field="*{childId}"
+                readonly="readonly"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><button type="submit">Submit</button></td>
+            <td>
+              <a href="/contacts"><button>Cancel</button></a>
+            </td>
+          </tr>
         </table>
-    </form>
-</div>
-</body>
+      </form>
+    </div>
+  </body>
 </html>
