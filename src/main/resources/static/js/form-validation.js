@@ -48,6 +48,24 @@ $(document).ready(function() {
         }
     });
 
+    $("form[name='contact-form']").validate({
+        rules: {
+            contactFirstName: "required",
+            contactLastName: "required",
+            contactPhoneNumber: "required",
+            childId: "required"
+        },
+        messages: {
+            contactFirstName: "!",
+            contactLastName: "!",
+            contactPhoneNumber: "!",
+            childId: "!"
+        },
+        submitHandler: function(form) {
+            form.submit();
+        }
+    });
+
 });
 
 
