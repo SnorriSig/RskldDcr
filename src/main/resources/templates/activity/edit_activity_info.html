@@ -10,6 +10,7 @@
       <h1>Edit activity information</h1>
       <form
         action="#"
+        name="activity-form"
         th:action="@{/save_activity}"
         th:object="${activity}"
         method="post"
@@ -33,7 +34,7 @@
             <td>Date:</td>
             <td>
               <input
-                type="text"
+                type="date"
                 th:field="*{activityDate}"
                 placeholder="yyyy-mm-dd"
               />
@@ -56,5 +57,8 @@
         </table>
       </form>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="/js/form-validation.js"></script>
   </body>
 </html>
