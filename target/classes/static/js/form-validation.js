@@ -30,7 +30,27 @@ $(document).ready(function() {
     });
 
 
+    $("form[name='activity-form']").validate({
+        rules: {
+            activityName: "required",
+            activityDate: "required",
+            activityStatus: "required",
+            teamId: "required"
+        },
+        messages: {
+            activityName: "!",
+            activityDate: "!",
+            activityStatus: "!",
+            teamId: "!"
+        },
+        submitHandler: function(form) {
+            form.submit();
+        }
+    });
+
 });
+
+
 
 
 

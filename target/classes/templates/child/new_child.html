@@ -32,7 +32,7 @@
             <td>Date of birth:</td>
             <td>
               <input
-                type="text"
+                type="date"
                 th:field="*{childDoB}"
                 placeholder="dd-mm-yyyy"
               />
@@ -44,7 +44,7 @@
           </tr>
           <tr>
             <td>Contact ID:</td>
-            <td><input type="number" th:field="*{contactId}" /></td>
+            <td><input type="number" th:field="*{contactId}" placeholder="9999 if unknown"/></td>
           </tr>
           <tr>
             <td>Child status:</td>
